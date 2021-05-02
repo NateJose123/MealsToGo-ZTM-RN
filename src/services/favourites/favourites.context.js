@@ -25,6 +25,7 @@ export const FavouritesContextProvider = ({ children }) => {
       console.log("error loading", e);
     }
   };
+
   const add = (restaurant) => {
     setFavourites([...favourites, restaurant]);
   };
@@ -33,6 +34,7 @@ export const FavouritesContextProvider = ({ children }) => {
     const newFavourites = favourites.filter(
       (x) => x.placeId !== restaurant.placeId
     );
+
     setFavourites(newFavourites);
   };
 
@@ -46,7 +48,11 @@ export const FavouritesContextProvider = ({ children }) => {
 
   return (
     <FavouritesContext.Provider
-      value={{ favourites, addToFavourites: add, removeFromFavourites: remove }}
+      value={{
+        favourites,
+        addToFavourites: add,
+        removeFromFavourites: remove,
+      }}
     >
       {children}
     </FavouritesContext.Provider>

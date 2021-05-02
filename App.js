@@ -1,18 +1,21 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components/native";
-import { theme } from "./src/infrastructure/theme/index";
+import * as firebase from "firebase";
+
 import {
   useFonts as useOswald,
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
-import { RestaurantContextProvider } from "./src/services/restaurants/restaurants.context";
+
+import { theme } from "./src/infrastructure/theme";
+import { Navigation } from "./src/infrastructure/navigation";
+
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 import { LocationContextProvider } from "./src/services/location/location.context";
 import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
-import { Navigation } from "./src/infrastructure/navigation/index";
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
-import * as firebase from "firebase";
 
 var firebaseConfig = {
   apiKey: "AIzaSyBJvtuHuSbYLg4mBGGx7CjJhrqDonwZxNc",
@@ -22,6 +25,7 @@ var firebaseConfig = {
   messagingSenderId: "116121312870",
   appId: "1:116121312870:web:48170fccd2a1f6ef9a97a7",
 };
+
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
@@ -45,9 +49,9 @@ export default function App() {
         <AuthenticationContextProvider>
           <FavouritesContextProvider>
             <LocationContextProvider>
-              <RestaurantContextProvider>
+              <RestaurantsContextProvider>
                 <Navigation />
-              </RestaurantContextProvider>
+              </RestaurantsContextProvider>
             </LocationContextProvider>
           </FavouritesContextProvider>
         </AuthenticationContextProvider>
