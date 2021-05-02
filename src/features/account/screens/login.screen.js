@@ -1,27 +1,28 @@
 import React, { useState, useContext } from "react";
+import { ActivityIndicator, Colors } from "react-native-paper";
+
 import {
   AccountBackground,
   AccountCover,
   AccountContainer,
   AuthButton,
   AuthInput,
-  Title,
   ErrorContainer,
+  Title,
 } from "../components/account.styles";
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
-import { Navigation } from "../../../infrastructure/navigation";
 
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { onLogin, error } = useContext(AuthenticationContext);
+  const { onLogin, error, isLoading } = useContext(AuthenticationContext);
   return (
     <AccountBackground>
       <AccountCover />
+      <Title>Meals To Go</Title>
       <AccountContainer>
-        <Title>Meals To Go</Title>
         <AuthInput
           label="E-mail"
           value={email}
@@ -41,26 +42,29 @@ export const LoginScreen = ({ navigation }) => {
           />
         </Spacer>
         {error && (
-          <ErrorContainer>
-            <Spacer size="large">
-              <Text variant="error">{error}</Text>
-            </Spacer>
+          <ErrorContainer size="large">
+            <Text variant="error">{error}</Text>
           </ErrorContainer>
         )}
         <Spacer size="large">
-          <AuthButton
-            icon="lock-open-outline"
-            mode="contained"
-            onPress={() => onLogin(email, password)}
-          >
-            Login
-          </AuthButton>
+          {!isLoading ? (
+            <AuthButton
+              icon="lock-open-outline"
+              mode="contained"
+              onPress={() => onLogin(email, password)}
+            >
+              Login
+            </AuthButton>
+          ) : (
+            <ActivityIndicator animating={true} color={Colors.blue300} />
+          )}
         </Spacer>
       </AccountContainer>
-      <Spacer size="large" />
-      <AuthButton mode="contained" onPress={() => navigation.goBack()}>
-        Go Back
-      </AuthButton>
+      <Spacer size="large">
+        <AuthButton mode="contained" onPress={() => navigation.goBack()}>
+          Back
+        </AuthButton>
+      </Spacer>
     </AccountBackground>
   );
 };

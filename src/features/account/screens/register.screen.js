@@ -1,28 +1,30 @@
 import React, { useState, useContext } from "react";
+
+import { ActivityIndicator, Colors } from "react-native-paper";
+
 import {
   AccountBackground,
   AccountCover,
   AccountContainer,
   AuthButton,
   AuthInput,
-  Title,
   ErrorContainer,
+  Title,
 } from "../components/account.styles";
 import { Text } from "../../../components/typography/text.component";
 import { Spacer } from "../../../components/spacer/spacer.component";
 import { AuthenticationContext } from "../../../services/authentication/authentication.context";
-import { Navigation } from "../../../infrastructure/navigation";
 
 export const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatedPassword, setRepeatedPassword] = useState("");
-  const { onRegister, error } = useContext(AuthenticationContext);
+  const { onRegister, isLoading, error } = useContext(AuthenticationContext);
   return (
     <AccountBackground>
       <AccountCover />
+      <Title>Meals To Go</Title>
       <AccountContainer>
-        <Title>Meals To Go</Title>
         <AuthInput
           label="E-mail"
           value={email}
@@ -52,26 +54,29 @@ export const RegisterScreen = ({ navigation }) => {
           />
         </Spacer>
         {error && (
-          <ErrorContainer>
-            <Spacer size="large">
-              <Text variant="error">{error}</Text>
-            </Spacer>
+          <ErrorContainer size="large">
+            <Text variant="error">{error}</Text>
           </ErrorContainer>
         )}
         <Spacer size="large">
-          <AuthButton
-            icon="email"
-            mode="contained"
-            onPress={() => onRegister(email, password, repeatedPassword)}
-          >
-            Register
-          </AuthButton>
+          {!isLoading ? (
+            <AuthButton
+              icon="email"
+              mode="contained"
+              onPress={() => onRegister(email, password, repeatedPassword)}
+            >
+              Register
+            </AuthButton>
+          ) : (
+            <ActivityIndicator animating={true} color={Colors.blue300} />
+          )}
         </Spacer>
       </AccountContainer>
-      <Spacer size="large" />
-      <AuthButton mode="contained" onPress={() => navigation.goBack()}>
-        Go Back
-      </AuthButton>
+      <Spacer size="large">
+        <AuthButton mode="contained" onPress={() => navigation.goBack()}>
+          Back
+        </AuthButton>
+      </Spacer>
     </AccountBackground>
   );
 };
