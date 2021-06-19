@@ -8,35 +8,31 @@ Time spent: 40 hours spent in total
 
 The following **required** functionality is completed:
 
-- [x] User can view the last 20 posts submitted to "Instagram".
-- [x] User can pull to refresh the last 20 posts submitted to "Instagram".
-- [x] The user should switch between different tabs - viewing all posts (feed view), capture (camera and photo gallery view) and profile tabs (posts made) using fragments and a Bottom Navigation View. (2 points)
-
-The following **optional** features are implemented:
-
-- [ ] Style the feed to look like the real Instagram feed.
-- [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
-- [ ] Show the username and creation time for each post.
-- [ ] User can tap a post to view post details, including timestamp and caption.
-- [ ] User Profiles
-      - [ ] Allow the logged in user to add a profile photo
-      - [ ] Display the profile photo with each post
-- [ ] Tapping on a post's username or profile photo goes to that user's profile page and shows a grid view of the user's posts
-- [ ] User can comment on a post and see all comments for each post in the post details screen.
-- [ ] User can like a post and see number of likes for each post in the post details screen.
-- [ ] Run your app on your phone and use a custom camera view
+- [x] User can create an account and login in app via Firebase
+- [x] User can take and update profile picture using device camera.
+- [x] User can navigate between restaurants, map and settings tabs.
+- [x] User can search for location in search bar
+- [x] User can view a list of restaurants in the specified area along with their details including type and address.
+- [x] User can select individual restaurants to view more details including menu.
+- [x] User can favorite restaurants and view favorites in a separate horizontal list below search bar.
+- [x] User can also view and select restaurants rendered on Google Maps/Apple Maps. 
+- [x] Selecting restaurants in map view takes user back to restaurants menu.
+- [x] Selecting restaurants in map view renders a brief preview containing picture and name of restaurant.
+- [x] Settings tab contains user's profile picture, name and logout button.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Dedicated list of user's favorites in settings.
+- [x] Watermelon animation in login screen.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/wZetjQs.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/rAPoA2J.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+<img src='https://imgur.com/A124pgP.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 
 ## Notes
 
