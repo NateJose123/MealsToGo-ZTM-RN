@@ -29,32 +29,28 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/a/OxnCcgB' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<img src='https://imgur.com/A124pgP.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/VP0LpzF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Challenges: 
+-Managing state of the app and its components that were nested under multiple navigators
+-Firebase Auth Error Management
+-Maps rendering differences for iOS and Android
+-UI similarity cross-platform
+-Device camera access, state and control management.
 
 ## Open-source libraries used
 
-- [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
-- [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Android
+- React Native Paper - UI
+- Lottie React Native
+- Async Storage
+- Expo Google Fonts
+- React Native Maps
 
 ## License
 
     Copyright [2020] [Nathan Jose]
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+  
