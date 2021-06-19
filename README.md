@@ -1,4 +1,4 @@
-# Project 3 - Intragram
+# Meals To Go
 
 Meals To Go is a food app that helps users find restaurants in their area and get details about them including their menu, business hours and address.
 
@@ -29,9 +29,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://imgur.com/rAPoA2J.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/rAPoA2J' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<img src='https://imgur.com/A124pgP.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://imgur.com/A124pgP' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 ## Notes
